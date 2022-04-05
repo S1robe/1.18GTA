@@ -1,0 +1,80 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
+}
+
+group 'me.strobe'
+version '1.0'
+
+repositories {
+    mavenCentral()
+
+    maven { url = "https://jitpack.io" }
+    maven { url = uri("https://papermc.io/repo/repository/maven-public/")}
+    maven { url "https://repo.codemc.org/repository/maven-public/" }
+    maven { url "https://maven.enginehub.org/repo/" }
+    maven { url "https://repo.extendedclip.com/content/repositories/placeholderapi/" }
+
+    flatDir {
+        //dirs 'C:\\Users\\-_-\\Documents\\Programming\\Java Resources\\Jars'
+
+        //FILE API
+        dirs '/home/kira/Documents/Programming/Minecraft (Java)/UnModded/GTA/1.19GTA/FileAPI/build/libs/'
+    }
+}
+
+dependencies {
+
+    //FileAPI
+    compileOnly name: 'FileAPI-1.0'
+
+    // Worldguard
+    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.6'
+
+    //Vault
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+
+    //Paper
+    compileOnly "io.papermc.paper:paper-api:1.18.2-R0.1-SNAPSHOT"
+
+    // Mongo Driver 4.4.0
+    // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
+    implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.10'
+
+    //NBT
+    implementation group: 'de.tr7zw', name: 'item-nbt-api-plugin', version: '2.9.0'
+
+    // Command API
+    implementation "dev.jorel.CommandAPI:commandapi-shade:6.5.3"
+    compileOnly "dev.jorel.CommandAPI:commandapi-annotations:6.5.3"
+    annotationProcessor "dev.jorel.CommandAPI:commandapi-annotations:6.5.3"
+
+    // Placeholder API
+    compileOnly 'me.clip:placeholderapi:2.11.1'
+
+    // Particle API
+    implementation 'xyz.xenondevs:particle:1.7'
+
+    // Inventory Framework
+    implementation 'com.github.stefvanschie.inventoryframework:IF:0.10.5'
+
+    // Lombok --------------------------------------------- //
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+    // ---------------------------------------------------- //
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+
+test {
+    useJUnitPlatform()
+}

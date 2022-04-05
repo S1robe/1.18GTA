@@ -1,0 +1,5 @@
+rootProject.name = '1.19GTA'
+include 'Core'
+include 'FileAPI'
+include 'Aggregation'
+

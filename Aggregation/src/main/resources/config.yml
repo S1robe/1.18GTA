@@ -1,0 +1,31 @@
+#Welcome to the aggregation config! Everything should be separated by commas and have the same # of elements unless
+# specified otherwise.
+
+#Host is the ip/hostname of the database, put "localhost" if you are storing it locally
+#Port is the port on the hostname that exposes the database, put 0 if you use the default 3306
+#database represents the name of the database's file
+  #if this is not specified it will be called aggregation_database
+#credentials determines if we need to login using the credentials in username and password
+#username is the username for the database
+#password is the password for the database.
+database:
+  host:
+  port:
+  database:
+  credentials:
+  username:
+  password:
+
+
+
+#Put the names of your economies here
+economies:
+
+#Put the plural name of your economies here, there must be the same amount as in #economies
+plural-names:
+
+#Put the minimum for each economy, if you want them all to be the same, specify only one number
+min-for-ecos:
+
+#Put the maximum for each economy, if you want them all to be the same, specify only one number
+max-for-ecos:
