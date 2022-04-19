@@ -82,7 +82,7 @@ public class DatabaseManager {
     }
 
     public boolean hasAccount(final OfflinePlayer p1) {
-        conn.createStatement().execute("")
+//        conn.createStatement().execute("");
     }
 
     public boolean hasAccount(final OfflinePlayer p0, final String p1) {
